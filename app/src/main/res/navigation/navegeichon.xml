@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegeichon"
+    app:startDestination="@id/fragmentListaFono">
+
+    <fragment
+        android:id="@+id/fragmentDetalleFono"
+        android:name="com.example.sprint6telefonos.vistas.FragmentDetalleFono"
+        android:label="fragment_detalle_fono"
+        tools:layout="@layout/fragment_detalle_fono" />
+    <fragment
+        android:id="@+id/fragmentListaFono"
+        android:name="com.example.sprint6telefonos.vistas.FragmentListaFono"
+        android:label="fragment_lista_fono"
+        tools:layout="@layout/fragment_lista_fono" >
+        <action
+            android:id="@+id/action_fragmentListaFono_to_fragmentDetalleFono"
+            app:destination="@id/fragmentDetalleFono" />
+    </fragment>
+</navigation>
