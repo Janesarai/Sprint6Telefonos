@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tabla_fono")
 data class FonoEntity (
-    @PrimaryKey val id: Int,
+    @PrimaryKey val id: String,
     val nombre: String,
     val precio: Int,
     val imagen: String
