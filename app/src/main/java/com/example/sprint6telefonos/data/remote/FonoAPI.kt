@@ -9,6 +9,6 @@ interface FonoAPI {
     suspend fun getData(): Response<List<Fono>>
 
 
-    //@GET("/Himuravidal/FakeAPIdata/details/{id}")
-    //suspend fun getDetalleFono(): Response<FonoDetalle>
+    @GET("/Himuravidal/FakeAPIdata/details/{id}")
+    suspend fun getDetalleFono(): Response<FonoDetalle>
 }
