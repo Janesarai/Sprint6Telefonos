@@ -5,11 +5,10 @@ import retrofit2.http.GET
 
 interface FonoAPI {
 
-    @GET("/Himuravidal/FakeAPIdata/products/")
-    suspend fun getData(): Response<Fono>
+    @GET("products")
+    suspend fun getData(): Response<List<Fono>>
 
-    // revisar si va con int o no el id (o si es necesaario el path)
 
-    @GET("/Himuravidal/FakeAPIdata/details/{id}")
-    suspend fun getDetalleFono(): Response<FonoDetalle>
+    //@GET("/Himuravidal/FakeAPIdata/details/{id}")
+    //suspend fun getDetalleFono(): Response<FonoDetalle>
 }

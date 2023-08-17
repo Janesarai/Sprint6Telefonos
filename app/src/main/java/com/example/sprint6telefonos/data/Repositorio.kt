@@ -22,8 +22,9 @@ class Repositorio (private val fonoAPI: FonoAPI, private val fonoDAO: FonoDAO) {
             if (response.isSuccessful) { //llegaron los datos?
                 val resp = response.body()
                 resp?.let { fono ->
-                    val fonoEntity = fono.toEntity()
-                    fonoDAO.insertFono(fonoEntity)
+                        val fonoEntity = fono.map{it.toEntity()}
+                    Log.e("fonoEntity.size",fonoEntity.size.toString() )
+                        fonoDAO.insertFono(fonoEntity)
                 }
             }
         } catch (exeption: Exception) {
@@ -49,4 +50,4 @@ class Repositorio (private val fonoAPI: FonoAPI, private val fonoDAO: FonoDAO) {
     }
 }
 fun Fono.toEntity(): FonoEntity = FonoEntity(this.id, this.name, this.price, this.image)
-fun FonoDetalle.toEntity(): FonoDetalleEntity = FonoDetalleEntity(this.description, this.lastPrice, this.credit)
+fun FonoDetalle.toEntity(): FonoDetalleEntity = FonoDetalleEntity(this.id, this.name, this.price, this.image,this.description, this.lastPrice, this.credit)

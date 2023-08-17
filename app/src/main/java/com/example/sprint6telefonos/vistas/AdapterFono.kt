@@ -45,7 +45,7 @@ class AdapterFono: RecyclerView.Adapter <AdapterFono.ItemFonoViewHolder>() {
             fonoVista.imgFono.load(fono.imagen)
             fonoVista.CVfono.setOnClickListener {
                 val bundle = Bundle()
-                bundle.putString("id", fono.id)
+                bundle.putInt("id", fono.id)
                 Navigation.findNavController(fonoVista.root).navigate(R.id.action_fragmentListaFono_to_fragmentDetalleFono, bundle)
             }
         }
