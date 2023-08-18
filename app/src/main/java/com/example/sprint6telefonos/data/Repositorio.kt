@@ -48,5 +48,3 @@ class Repositorio (private val fonoAPI: FonoAPI, private val fonoDAO: FonoDAO) {
         }
     }
 }
-fun Fono.toEntity(): FonoEntity = FonoEntity(this.id, this.name, this.price, this.image)
-fun FonoDetalle.toEntity(): FonoDetalleEntity = FonoDetalleEntity(this.id, this.name, this.price, this.image,this.description, this.lastPrice, this.credit)

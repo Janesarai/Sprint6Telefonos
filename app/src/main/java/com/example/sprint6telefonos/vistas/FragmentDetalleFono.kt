@@ -1,5 +1,7 @@
 package com.example.sprint6telefonos.vistas
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,6 +53,19 @@ class FragmentDetalleFono : Fragment() {
                     binding.txCredito.text = "Pago solo en efectivo"
                 } else {
                     binding.txCredito.text = "Se acepta tarjeta de credito"
+                }
+                binding.btnEmail.setOnClickListener {_->
+                    val email = "info@novaera.cl"
+                    val intentEmail = Intent(Intent.ACTION_SEND, Uri.parse(email))
+                    intentEmail.type = "plain/text"
+                    intentEmail.putExtra(Intent.EXTRA_SUBJECT, "Consulta ${fonoDetail.nombre} id " +
+                            "${fonoDetail.id}")
+                    intentEmail.putExtra(Intent.EXTRA_TEXT, "“Hola\n" +
+                            "Vi el celular ${fonoDetail.nombre} de código ${fonoDetail.id} y me gustaría\n" +
+                            "que me contactaran a este correo o al siguiente número\n" +
+                            "Quedo atento.”")
+                    intentEmail.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+                    startActivity(Intent.createChooser(intentEmail, "Elige cliente de correo"))
                 }
             }
         }
