@@ -13,8 +13,7 @@ class Repositorio (private val fonoAPI: FonoAPI, private val fonoDAO: FonoDAO) {
 
     fun obtenerFonosEntity(): LiveData<List<FonoEntity>> = fonoDAO.getFonos()
 
-    fun obtenerFonosDetalle(id: String): LiveData<List<FonoDetalleEntity>> =
-        fonoDAO.getFonoDetalle(id)
+    fun obtenerFonosDetalle(id: Int): LiveData<FonoDetalleEntity> = fonoDAO.getFonoDetalle(id)
 
     suspend fun getFonos() {
         try {
@@ -32,14 +31,14 @@ class Repositorio (private val fonoAPI: FonoAPI, private val fonoDAO: FonoDAO) {
         }
     }
 
-    suspend fun getDetalleFono() {
+    suspend fun getDetalleFono(id: Int) {
         // try para que no se caiga sin internet
         try {
-            val response = fonoAPI.getDetalleFono()// llegan los datos
+            val response = fonoAPI.getDetalleFono(id)// llegan los datos
             if (response.isSuccessful) {
                 val resp = response.body()
-                resp?.let { fonoDetalle ->
-                    val fonoDetalleEntity = fonoDetalle.toEntity()
+                if(resp!= null){
+                    val fonoDetalleEntity = resp.toEntity()
                     fonoDAO.insertDetalleFono(fonoDetalleEntity)
                 }
             }

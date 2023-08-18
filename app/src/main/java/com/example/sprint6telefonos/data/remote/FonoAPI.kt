@@ -2,6 +2,7 @@ package com.example.sprint6telefonos.data.remote
 
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface FonoAPI {
 
@@ -9,6 +10,6 @@ interface FonoAPI {
     suspend fun getData(): Response<List<Fono>>
 
 
-    @GET("/Himuravidal/FakeAPIdata/details/{id}")
-    suspend fun getDetalleFono(): Response<FonoDetalle>
+    @GET("details/{id}")
+    suspend fun getDetalleFono(@Path("id")id:Int): Response<FonoDetalle>
 }

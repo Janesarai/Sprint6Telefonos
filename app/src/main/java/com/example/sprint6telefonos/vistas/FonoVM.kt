@@ -20,9 +20,13 @@ init {
     fun fonoLiveData()= repositorio.obtenerFonosEntity()
 
 // falta detalle
-    //fun detalleLiveData()= repositorio.obtenerFonosDetalle(id:String)
+    fun detalleLiveData(id:Int)= repositorio.obtenerFonosDetalle(id)
 
     fun getTodosFonos()= viewModelScope.launch {
         repositorio.getFonos()
+    }
+
+    fun getDetallesFono(id:Int) = viewModelScope.launch {
+        repositorio.getDetalleFono(id)
     }
 }

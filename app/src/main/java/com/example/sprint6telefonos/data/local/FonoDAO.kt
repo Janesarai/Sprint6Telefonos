@@ -20,6 +20,6 @@ interface FonoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDetalleFono(fonoDetalleEntity: FonoDetalleEntity)
 
-    @Query("Select * from tabla_detalleFono where fonoDescripcion like :id")
-    fun getFonoDetalle(id:String): LiveData<List<FonoDetalleEntity>>
+    @Query("Select * from tabla_detalleFono where fonoDescripcion like id = :id")
+    fun getFonoDetalle(id:Int): LiveData<FonoDetalleEntity>
 }

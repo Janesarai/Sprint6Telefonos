@@ -13,7 +13,7 @@ class FonoRetrofit {
 
         fun getRetrofitFono() : FonoAPI {
             val mRetrofit = Retrofit.Builder()
-                .baseUrl("https://my-json-server.typicode.com/Himuravidal/FakeAPIdata/")
+                .baseUrl(URL_BASE)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
