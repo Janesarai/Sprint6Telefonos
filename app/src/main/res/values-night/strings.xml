@@ -3,4 +3,14 @@
     <string name="txFonoName" />
     <string name="txNombreFono" />
     <string name="txPrecio" />
+    <string name="BotonEnviarEmail" />
+    <string name="NombreDetalle" />
+    <string name="PrecioDetalle" />
+    <string name="Descripcion" />
+    <string name="PrecioFinal" />
+    <string name="precioFinall" />
+    <string name="credito" />
+    <string name="nombreDetalle" />
+    <string name="precioDetalle" />
+    <string name="descripcion" />
 </resources>
