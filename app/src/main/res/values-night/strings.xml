@@ -13,4 +13,9 @@
     <string name="nombreDetalle" />
     <string name="precioDetalle" />
     <string name="descripcion" />
+    <string name="botonEnviarEmail">Enviar Email para cotizar</string>
+    <string name="precioAntes">Precio Antes:</string>
+    <string name="txDescripcionn">Descripción:</string>
+    <string name="ahora">Ahora:</string>
+    <string name="medioPago">Medios de Pago:</string>
 </resources>
