@@ -50,16 +50,16 @@
 
             <TextView
                 android:id="@+id/txPrecio"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:gravity="center"
                 android:hint="precio"
                 android:inputType="number"
                 android:text="@string/txPrecio"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/txNombreFono"
-                app:layout_constraintStart_toStartOf="@+id/txNombreFono"
-                app:layout_constraintTop_toBottomOf="@+id/txNombreFono" />
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/txpreciover" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -74,6 +74,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="373dp" />
+
+            <TextView
+                android:id="@+id/txpreciover"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/preciover"
+                android:textColor="@color/text_icon"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/txNombreFono" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
